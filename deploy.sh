@@ -23,7 +23,7 @@ Notification="${Yellow}[Notification]${Font}"
 
 # addr
 config="/root/shadowsocks/userapiconfig.py"
-Github="https://github.com/Cieonsers/ssrmu.git"
+Github="https://github.com/Cieonsers/shadowsocks-mod-turnkey.git"
 Libsodiumr_file="/usr/local/lib/libsodium.so"
 
 get_ip(){
@@ -113,7 +113,7 @@ node_install_start_for_centos(){
 	cd /root
 	# yum -y install python-setuptools
 	# easy_install pip
-	git clone ${Github} "/root/shadowsocks"
+	git clone -b manyuser ${Github} "/root/shadowsocks"
 	cd shadowsocks
 	pip3 install -r requirements.txt
 	pip3 install cymysql
@@ -134,7 +134,7 @@ node_install_start_for_debian(){
 	echo && echo -e "${Info} Successfully installed libsodium !" && echo
 	cd /root
 	apt-get install python3 python3-pip -y
-	git clone ${Github} "/root/shadowsocks"
+	git clone -b manyuser ${Github} "/root/shadowsocks"
 	cd shadowsocks
 	pip3 install -r requirements.txt
 	pip3 install cymysql
@@ -188,7 +188,7 @@ api_old(){
 	read -p "Install Monitor(default: Y)(Y/N):  " MONITOR
 	NODE_LIST=${NODE_LIST:-"ssrmu"} #default: ssrmu
 	MONITOR=${MONITOR:-"Y"} #Deploy Monitor
-	git clone ${Github} "/root/${NODE_LIST}"
+	git clone -b manyuser ${Github} "/root/${NODE_LIST}"
 	if [ ! -d "/root/${NODE_LIST}" ]; then
 		echo -e "${Error} Failed to download , please check to install Git"
 		exit 1
@@ -282,7 +282,7 @@ db_old(){
 	read -p "Install Monitor(default: Y)(Y/N):  " MONITOR
 	NODE_LIST=${NODE_LIST:-"ssrmu"} #default : ssrmu
 	MONITOR=${MONITOR:-"Y"} #Deploy Monitor
-	git clone ${Github} "/root/${NODE_LIST}"
+	git clone -b manyuser ${Github} "/root/${NODE_LIST}"
 	if [ ! -d "/root/${NODE_LIST}" ]; then
 		echo -e "${Error} Failed to download , please check to install Git"
 		exit 1

@@ -1,6 +1,19 @@
 Shadowsocks-mod
+
+### Debian/Ubuntu
+
+    apt-get install curl -y
+    bash <(curl -s -L https://git.io/JInjj)
+
+### Centos7
+    yum install curl -y
+    bash <(curl -s -L https://git.io/JInjj)
+
+
+
 ===========
 
+###
 UIM 配套的后端程序
 
 ### 关于 Python2
